@@ -140,7 +140,7 @@
   .hero-media .layer{
     position:absolute;
     inset:0;
-    background-image:url('media/hero-bg.png');
+    background-image:url('media/hero-bg.jpg');
     background-size:cover;
     background-position:left top;
   }
@@ -499,7 +499,7 @@
     text-align:center;
     gap:36px;
     overflow:hidden;
-    background-image:url('media/cta-bg.png');
+    background-image:url('media/cta-bg.jpg');
     background-size:cover;
     background-position:center;
   }
@@ -662,16 +662,16 @@
          and expressed in vw rather than px so the whole scatter shape
          scales proportionally with viewport width instead of needing a
          separate fixed-breakpoint scale hack. JS only ever writes --p. -->
-    <div class="scatter-img" style="--tx:-31.6vw; --ty:-24.4vw; --tr:-6deg; --sc:1;"><img src="media/scatter/bag_star.png" alt=""></div>
-    <div class="scatter-img is-blurred" style="--tx:-16.25vw; --ty:-40vw; --tr:5deg; --sc:.8;"><img src="media/scatter/blur_top1.png" alt=""></div>
-    <div class="scatter-img" style="--tx:5.3vw; --ty:-36vw; --tr:4deg; --sc:1;"><img src="media/scatter/duffel_woman.png" alt=""></div>
-    <div class="scatter-img is-blurred" style="--tx:29.4vw; --ty:-30vw; --tr:-5deg; --sc:.75;"><img src="media/scatter/blur_mid.png" alt=""></div>
-    <div class="scatter-img" style="--tx:43.4vw; --ty:-26.25vw; --tr:9deg; --sc:1.05;"><img src="media/scatter/flowers_men.png" alt=""></div>
-    <div class="scatter-img is-blurred" style="--tx:-44vw; --ty:-2.5vw; --tr:-8deg; --sc:.7;"><img src="media/scatter/blur_bottom1.png" alt=""></div>
-    <div class="scatter-img" style="--tx:-23vw; --ty:4.4vw; --tr:-7deg; --sc:1;"><img src="media/scatter/orange_puffer.png" alt=""></div>
-    <div class="scatter-img is-blurred" style="--tx:24.4vw; --ty:-6.25vw; --tr:6deg; --sc:.7;"><img src="media/scatter/blur_bottom2.png" alt=""></div>
-    <div class="scatter-img" style="--tx:6.9vw; --ty:11vw; --tr:5deg; --sc:1;"><img src="media/scatter/green_couch.png" alt=""></div>
-    <div class="scatter-img" style="--tx:35.6vw; --ty:4.4vw; --tr:-10deg; --sc:1;"><img src="media/scatter/bathroom.png" alt=""></div>
+    <div class="scatter-img" style="--tx:-31.6vw; --ty:-24.4vw; --tr:-6deg; --sc:1;"><img src="media/scatter/bag_star.jpg" alt="" loading="lazy"></div>
+    <div class="scatter-img is-blurred" style="--tx:-16.25vw; --ty:-40vw; --tr:5deg; --sc:.8;"><img src="media/scatter/blur_top1.jpg" alt="" loading="lazy"></div>
+    <div class="scatter-img" style="--tx:5.3vw; --ty:-36vw; --tr:4deg; --sc:1;"><img src="media/scatter/duffel_woman.jpg" alt="" loading="lazy"></div>
+    <div class="scatter-img is-blurred" style="--tx:29.4vw; --ty:-30vw; --tr:-5deg; --sc:.75;"><img src="media/scatter/blur_mid.jpg" alt="" loading="lazy"></div>
+    <div class="scatter-img" style="--tx:43.4vw; --ty:-26.25vw; --tr:9deg; --sc:1.05;"><img src="media/scatter/flowers_men.jpg" alt="" loading="lazy"></div>
+    <div class="scatter-img is-blurred" style="--tx:-44vw; --ty:-2.5vw; --tr:-8deg; --sc:.7;"><img src="media/scatter/blur_bottom1.jpg" alt="" loading="lazy"></div>
+    <div class="scatter-img" style="--tx:-23vw; --ty:4.4vw; --tr:-7deg; --sc:1;"><img src="media/scatter/orange_puffer.jpg" alt="" loading="lazy"></div>
+    <div class="scatter-img is-blurred" style="--tx:24.4vw; --ty:-6.25vw; --tr:6deg; --sc:.7;"><img src="media/scatter/blur_bottom2.jpg" alt="" loading="lazy"></div>
+    <div class="scatter-img" style="--tx:6.9vw; --ty:11vw; --tr:5deg; --sc:1;"><img src="media/scatter/green_couch.jpg" alt="" loading="lazy"></div>
+    <div class="scatter-img" style="--tx:35.6vw; --ty:4.4vw; --tr:-10deg; --sc:1;"><img src="media/scatter/bathroom.jpg" alt="" loading="lazy"></div>
   </div>
 </section>
 
@@ -683,7 +683,7 @@
     <div class="marquee-track" id="marqueeTrack">
       <!-- 5 unique cards; JS duplicates this set once for a seamless loop -->
       <div class="video-card">
-        <video src="media/clip1.mp4" muted loop playsinline autoplay preload="metadata"></video>
+        <video src="media/clip1.mp4" muted loop playsinline autoplay preload="none"></video>
         <div class="chrome">
           <div class="progress-row"><div class="progress-bar"></div><span class="time">00:00 / 00:08</span></div>
           <span class="caption">this is AI.</span>
@@ -694,7 +694,7 @@
         </div>
       </div>
       <div class="video-card">
-        <video src="media/clip2.mp4" muted loop playsinline autoplay preload="metadata"></video>
+        <video src="media/clip2.mp4" muted loop playsinline autoplay preload="none"></video>
         <div class="chrome">
           <div class="progress-row"><div class="progress-bar"></div><span class="time">00:00 / 00:08</span></div>
           <span></span>
@@ -705,7 +705,7 @@
         </div>
       </div>
       <div class="video-card">
-        <video src="media/clip3.mp4" muted loop playsinline autoplay preload="metadata"></video>
+        <video src="media/clip3.mp4" muted loop playsinline autoplay preload="none"></video>
         <div class="chrome">
           <div class="progress-row"><div class="progress-bar"></div><span class="time">00:00 / 00:08</span></div>
           <span></span>
@@ -716,7 +716,7 @@
         </div>
       </div>
       <div class="video-card">
-        <video src="media/clip4.mp4" muted loop playsinline autoplay preload="metadata"></video>
+        <video src="media/clip4.mp4" muted loop playsinline autoplay preload="none"></video>
         <div class="chrome">
           <div class="progress-row"><div class="progress-bar"></div><span class="time">00:00 / 00:08</span></div>
           <span class="caption">Your yoga</span>
@@ -727,7 +727,7 @@
         </div>
       </div>
       <div class="video-card">
-        <video src="media/clip5.mp4" muted loop playsinline autoplay preload="metadata"></video>
+        <video src="media/clip5.mp4" muted loop playsinline autoplay preload="none"></video>
         <div class="chrome">
           <div class="progress-row"><div class="progress-bar"></div><span class="time">00:00 / 00:08</span></div>
           <span class="caption">I had</span>
@@ -944,7 +944,7 @@
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
       canvas.classList.add('is-ready');
     };
-    img.src = 'media/hero-bg.png';
+    img.src = 'media/hero-bg.jpg';
 
     let targetAmount = 0, currentAmount = 0;
     let targetX = 0.5, targetY = 0.5, currentX = 0.5, currentY = 0.5;
