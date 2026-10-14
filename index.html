@@ -499,18 +499,18 @@
     background:linear-gradient(90deg, var(--orange-2), var(--orange-1) 50%, var(--orange-2));
     color:#fff;
     overflow:hidden;
-    padding:22px 0;
+    padding:10px 0;
     white-space:nowrap;
   }
   .strip-track{ display:inline-flex; animation:stripMove 38s linear infinite; }
   .strip-track span{
     font-family:var(--font-head);
     font-weight:500;
-    font-size:clamp(20px,2.4vw,30px);
-    padding:0 28px;
+    font-size:clamp(13px,1.2vw,16px);
+    padding:0 20px;
     display:inline-flex;
     align-items:center;
-    gap:56px;
+    gap:40px;
   }
   .strip-track span::after{ content:'✦'; font-size:.7em; opacity:.8; }
   @keyframes stripMove{ to{ transform:translateX(-50%); } }
@@ -584,7 +584,7 @@
   @media (max-width:700px){
     .steps-line{ display:none; }
     .info-card .num{ font-size:48px; }
-    .strip{ padding:16px 0; }
+    .strip{ padding:9px 0; }
   }
   @media (prefers-reduced-motion: reduce){ .strip-track{ animation:none; } }
 
