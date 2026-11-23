@@ -4,12 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Spravoo</title>
-<meta name="description" content="AI labs are paying companies to license their internal data to train AI on how real businesses work. We connect you with the buyer and handle the process end to end.">
+<meta name="description" content="Spravoo is an AI implementation company. We find the manual work slowing your team down, build AI systems that take it over, and run them for you.">
 <link rel="icon" type="image/png" href="media/favicon.png">
 <link rel="apple-touch-icon" href="media/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Sans:wght@500;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Sans:wght@500;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --orange-1:#e9772c;
@@ -439,7 +439,7 @@
   @media (max-width:1100px){
     /* the absolutely-positioned hero paragraph would collide with the
        headline at these widths — let it flow under the buttons instead */
-    .hero-copy{ position:static; max-width:560px; padding:0 48px 56px; margin-top:-24px; }
+    .hero-copy{ position:static; max-width:560px; padding:0 48px 56px; margin-top:8px; }
     .hero-inner{ padding-bottom:40px; }
     .card-grid.cols-4{ grid-template-columns:repeat(2, 1fr); }
   }
@@ -463,8 +463,8 @@
        (the canvas uses the same anchor — see heroRipple) */
     .hero{ min-height:620px; }
     .hero-media .layer{ background-position:32% 20%; }
-    .hero-inner{ padding:0 20px 32px; }
-    .hero-copy{ padding:0 20px 44px; margin-top:-8px; font-size:15px; }
+    .hero-inner{ padding:0 20px 44px; }
+    .hero-sub{ font-size:16px; }
     .hero-cta .btn{ width:100%; }
     .hero-title br{ display:none; }
 
@@ -573,6 +573,9 @@
   .section-sub{ font-size:18px; max-width:520px; opacity:.7; margin:-28px 0 48px; line-height:1.6; }
 
   /* hero stats */
+  .hero-sub{ font-weight:300; margin-top:24px; max-width:560px; font-size:18px; line-height:1.6; color:rgba(255,255,255,.92); }
+  .hero-note{ font-weight:300; margin-top:20px; max-width:520px; font-size:14px; font-style:italic; line-height:1.5; color:rgba(255,255,255,.85); }
+  .hero-cta{ margin-top:16px; }
   .hero-stats{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
   .hero-stats span{
     padding:10px 18px; border-radius:100px; font-size:14px;
@@ -588,6 +591,54 @@
   }
   @media (prefers-reduced-motion: reduce){ .strip-track{ animation:none; } }
 
+  /* ---------- new-copy additions ---------- */
+  .card-grid.cols-5{ grid-template-columns:repeat(6, 1fr); }
+  .card-grid.cols-5 .info-card{ grid-column:span 2; }
+  .card-grid.cols-5 .info-card:nth-child(n+4){ grid-column:span 3; }
+  .info-card.tall-sm{ min-height:260px; gap:40px; }
+  .section-note{ margin-top:36px; font-size:18px; opacity:.75; max-width:640px; line-height:1.6; }
+
+  .faq-list{ max-width:900px; display:flex; flex-direction:column; gap:14px; }
+  .faq-item{
+    border-radius:20px;
+    background:var(--dark-card);
+    border:1px solid rgba(255,255,255,.07);
+    transition:background-color .25s ease, border-color .25s ease;
+  }
+  .faq-item[open]{ background:#2b2b2b; border-color:rgba(233,119,44,.45); }
+  .faq-item summary{
+    list-style:none;
+    cursor:pointer;
+    padding:24px 28px;
+    display:flex; justify-content:space-between; align-items:center; gap:20px;
+    font-family:var(--font-head); font-weight:500; font-size:clamp(18px,2vw,22px);
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-item summary::after{
+    content:'+'; flex:none;
+    width:36px; height:36px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(160deg, var(--orange-1), var(--orange-2));
+    font-size:22px; line-height:1;
+    transition:transform .25s ease;
+  }
+  .faq-item[open] summary::after{ transform:rotate(45deg); }
+  .faq-item p{ padding:0 28px 26px; font-size:16px; line-height:1.65; color:rgba(255,255,255,.72); max-width:720px; }
+
+  .cta-panel{ min-height:340px; padding:40px 48px; }
+  .cta-panel h2{ font-size:clamp(30px,3.8vw,50px); max-width:860px; }
+
+  @media (max-width:900px){
+    .card-grid.cols-5{ grid-template-columns:1fr; }
+    .card-grid.cols-5 .info-card, .card-grid.cols-5 .info-card:nth-child(n+4){ grid-column:auto; }
+  }
+  @media (max-width:700px){
+    .faq-item summary{ padding:20px; }
+    .faq-item p{ padding:0 20px 22px; }
+    .info-card.tall-sm{ min-height:0; gap:32px; }
+    .cta-panel{ padding:32px 24px; }
+  }
+
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     .btn, .qualify-card, .info-card, .site-header{ transition:none; }
@@ -599,12 +650,12 @@
 <header class="site-header" id="siteHeader">
   <a href="#hero" aria-label="Spravoo home"><img class="logo" src="media/logo.png" alt="Spravoo"></a>
   <nav class="main-nav" aria-label="Primary">
-    <a href="#operating">Operating companies</a>
-    <a href="#shutdown">Shut-down companies</a>
     <a href="#how">How it works</a>
-    <a href="#contact">Contact</a>
+    <a href="#automate">What we automate</a>
+    <a href="#why">Why us</a>
+    <a href="#faq">FAQ</a>
   </nav>
-  <a href="https://calendly.com/raj-spravoo/30min" target="_blank" rel="noopener" class="btn btn-black">Get a quote</a>
+  <a href="https://calendly.com/raj-spravoo/30min" target="_blank" rel="noopener" class="btn btn-black">Book a call</a>
 </header>
 
 <!-- ================= HERO ================= -->
@@ -615,159 +666,179 @@
   </div>
 
   <div class="hero-inner">
-    <span class="hero-badge">Free for companies</span>
-    <h1 class="hero-title" data-parallax="0.08">Turn your company's<br> data into $100K–$2M.</h1>
+    <h1 class="hero-title" data-parallax="0.08">Custom AI, built and<br> run for your business.</h1>
+    <p class="hero-sub">We find the manual work slowing your team down, build AI systems that take it over, and run them for you. No new software to learn. No new hires.</p>
+    <p class="hero-note">Free. You leave with a clear view of what is worth automating, whether or not we work together.</p>
     <div class="hero-cta">
-      <a href="https://calendly.com/raj-spravoo/30min" target="_blank" rel="noopener" class="btn btn-black">Find out what your data is worth →</a>
-      <a href="#how" class="btn btn-outline">How it works</a>
-    </div>
-    <div class="hero-stats">
-      <span><b>$0</b> cost to you</span>
-      <span><b>4 steps</b> to get paid</span>
-      <span><b>De-identified</b> &amp; approved by you</span>
+      <a href="https://calendly.com/raj-spravoo/30min" target="_blank" rel="noopener" class="btn btn-black">Book a 30-minute workflow call</a>
     </div>
   </div>
-
-  <p class="hero-copy" data-parallax="0.06">
-    AI labs are paying companies to license their internal data (docs, processes,
-    workflows, team communication) to train AI on how real businesses work. We
-    connect you with the buyer and handle the process end to end.
-  </p>
 </section>
 
-
 <!-- ================= DATA TYPES STRIP ================= -->
-<div class="strip" aria-hidden="true"><div class="strip-track"><span>SOPs</span><span>Project histories</span><span>Internal docs</span><span>Support workflows</span><span>Slack &amp; Teams history</span><span>Tickets</span><span>Team communication</span><span>SOPs</span><span>Project histories</span><span>Internal docs</span><span>Support workflows</span><span>Slack &amp; Teams history</span><span>Tickets</span><span>Team communication</span><span>SOPs</span><span>Project histories</span><span>Internal docs</span><span>Support workflows</span><span>Slack &amp; Teams history</span><span>Tickets</span><span>Team communication</span><span>SOPs</span><span>Project histories</span><span>Internal docs</span><span>Support workflows</span><span>Slack &amp; Teams history</span><span>Tickets</span><span>Team communication</span></div></div>
+<div class="strip" aria-hidden="true"><div class="strip-track"><span>Data entry</span><span>Follow-ups</span><span>Customer communication</span><span>Repeat business</span><span>Approvals and handoffs</span><span>Reporting</span><span>Data entry</span><span>Follow-ups</span><span>Customer communication</span><span>Repeat business</span><span>Approvals and handoffs</span><span>Reporting</span><span>Data entry</span><span>Follow-ups</span><span>Customer communication</span><span>Repeat business</span><span>Approvals and handoffs</span><span>Reporting</span><span>Data entry</span><span>Follow-ups</span><span>Customer communication</span><span>Repeat business</span><span>Approvals and handoffs</span><span>Reporting</span></div></div>
 
-<!-- ================= OPERATING COMPANIES ================= -->
-<section class="audience is-light" id="operating">
+<!-- ================= THE PROBLEM ================= -->
+<section class="audience is-light" id="problem">
   <div class="glow" style="width:520px;height:520px;right:-120px;top:-120px;background:rgba(233,119,44,.35)"></div>
   <div class="glow" style="width:380px;height:380px;left:-120px;bottom:-120px;background:rgba(233,119,44,.18)"></div>
   <div class="audience-grid">
     <div class="audience-copy">
-      <span class="eyebrow">Operating companies</span>
-      <h2>Earn $100K–$2M from data you already have.</h2>
-      <p>Your company has years of SOPs, project histories, internal docs, and support workflows. AI labs will pay to license them, and it's a new revenue line with no change to how you run the business.</p>
-      <a href="https://calendly.com/raj-spravoo/30min" target="_blank" rel="noopener" class="btn btn-black">Check if your company qualifies →</a>
+      <span class="eyebrow">The problem</span>
+      <h2>More growth shouldn't mean more admin.</h2>
+      <p>Every new customer adds emails to answer, data to enter, follow-ups to remember and reports to pull together. Most teams cope by hiring or working longer. Neither scales.</p>
+      <p>The software you already pay for wasn't built to do this work for you. And most AI tools just hand your team one more thing to learn.</p>
     </div>
     <div class="qualify-card">
-      <h3>You qualify if:</h3>
+      <h3>Every new customer adds:</h3>
       <ul>
-        <li>You have 30+ employees</li>
-        <li>You have established processes and documentation</li>
-        <li>Your documentation is mainly in English</li>
-        <li>You're based in the US, UK, or Canada (other markets considered)</li>
+        <li>Emails to answer</li>
+        <li>Data to enter</li>
+        <li>Follow-ups to remember</li>
+        <li>Reports to pull together</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ================= SHUT-DOWN COMPANIES ================= -->
-<section class="audience is-dark on-dark is-flipped" id="shutdown">
+<!-- ================= WHAT WE DO ================= -->
+<section class="audience is-dark on-dark is-flipped" id="what">
   <div class="glow" style="width:560px;height:560px;left:-160px;top:-100px;background:rgba(233,119,44,.3)"></div>
   <div class="glow" style="width:420px;height:420px;right:-120px;bottom:-140px;background:rgba(201,74,31,.28)"></div>
   <div class="audience-grid">
     <div class="audience-copy">
-      <span class="eyebrow">Shut-down companies</span>
-      <h2>Your company closed. Its data can still pay out $100K–$2M.</h2>
-      <p>Years of Slack or Teams history, tickets, and docs are often the last asset left on the books. The proceeds can go back to investors, cover pending dues, or help close the chapter on a better note.</p>
-      <a href="https://calendly.com/raj-spravoo/30min" target="_blank" rel="noopener" class="btn btn-white">Check if your data qualifies →</a>
+      <span class="eyebrow">What we do</span>
+      <h2>We build it. We run it. You get the results.</h2>
+      <p>Spravoo is an AI implementation company. We don't sell licenses. We learn how your business actually runs, then build systems that work inside the tools you already use, like your inbox, CRM, spreadsheets and internal systems.</p>
+      <p>Then we stay on to run and maintain them, so nothing breaks and nothing lands back on your team.</p>
+      <a href="https://calendly.com/raj-spravoo/30min" target="_blank" rel="noopener" class="btn btn-white">Book a 30-minute workflow call</a>
     </div>
     <div class="qualify-card">
-      <h3>You qualify if:</h3>
+      <h3>Works inside the tools you already use:</h3>
       <ul>
-        <li>Your company had 50+ employees at its peak</li>
-        <li>You still have access to company data or exports</li>
-        <li>Your team worked mainly in English</li>
-        <li>You were based in the US, UK, Canada, India, Australia, Singapore, Ireland, Netherlands, Germany, or France</li>
+        <li>Your inbox</li>
+        <li>Your CRM</li>
+        <li>Your spreadsheets</li>
+        <li>Your internal systems</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ================= HOW MUCH ================= -->
-<section class="quote-section on-dark" id="quote">
-  <div class="glow" style="width:760px;height:460px;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(233,119,44,.32)"></div>
-  <div class="ring" style="width:520px;height:520px"></div><div class="ring" style="width:820px;height:820px"></div><div class="ring" style="width:1120px;height:1120px"></div>
-  <span class="eyebrow">How much can you get?</span>
-  <div class="quote-number">$100K to $2M.</div>
-  <p class="quote-copy">What you get depends on your company size, years of history, and how much data you have. You'll get a real quote before committing to anything.</p>
+<!-- ================= WHAT WE AUTOMATE ================= -->
+<section class="grid-section is-light" id="automate">
+  <div class="glow" style="width:480px;height:480px;right:-140px;top:-160px;background:rgba(233,119,44,.25)"></div>
+  <span class="eyebrow">What we automate</span>
+  <h2 class="section-heading" data-parallax="0.09">The work that eats your week.</h2>
+  <div class="card-grid cols-3">
+    <div class="info-card tall-sm">
+      <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div>
+      <div><h3>Data entry</h3><p>Information from emails, forms and documents gets read, checked and entered into your systems automatically.</p></div>
+    </div>
+    <div class="info-card tall-sm">
+      <div class="icon-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <div><h3>Follow-ups</h3><p>Leads, proposals and open requests get timely follow-ups, so nothing goes quiet.</p></div>
+    </div>
+    <div class="info-card tall-sm">
+      <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L3 21l1.9-6.4A8 8 0 1121 12z"/></svg></div>
+      <div><h3>Customer communication</h3><p>Routine questions and status updates get answered fast and accurately from your own data.</p></div>
+    </div>
+    <div class="info-card tall-sm">
+      <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.5-4M4 4v4h4M4 13a8 8 0 0014.5 4M20 20v-4h-4"/></svg></div>
+      <div><h3>Repeat business</h3><p>Customers hear from you when they're due to buy again, before someone else reaches them.</p></div>
+    </div>
+    <div class="info-card tall-sm">
+      <div class="icon-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg></div>
+      <div><h3>Approvals and handoffs</h3><p>Sign-offs and internal handoffs get chased automatically, so work keeps moving.</p></div>
+    </div>
+    <div class="info-card tall-sm">
+      <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+      <div><h3>Reporting</h3><p>A clear weekly summary of what moved, what's stuck and what needs attention.</p></div>
+    </div>
+  </div>
+  <p class="section-note">Don't see your workflow? That's normal. Most of what we build is specific to one business.</p>
 </section>
 
 <!-- ================= HOW IT WORKS ================= -->
-<section class="grid-section is-light" id="how">
-  <div class="glow" style="width:480px;height:480px;right:-140px;top:-160px;background:rgba(233,119,44,.25)"></div>
-  <div class="steps-line"></div>
-  <span class="eyebrow">Simple process</span>
-  <h2 class="section-heading" data-parallax="0.09">How it works</h2>
-  <div class="card-grid cols-4">
+<section class="grid-section is-dark on-dark" id="how">
+  <div class="glow" style="width:520px;height:520px;left:30%;bottom:-260px;background:rgba(233,119,44,.25)"></div>
+  <span class="eyebrow">How it works</span>
+  <h2 class="section-heading" data-parallax="0.09">Three steps. No disruption.</h2>
+  <div class="card-grid cols-3">
     <div class="info-card">
       <div class="num">01</div>
-      <div>
-        <h3>Quick check.</h3>
-        <p>We confirm whether your company's data qualifies.</p>
-      </div>
+      <div><h3>Workflow call</h3><p>In 30 minutes, you walk us through how work moves through your team. We find where the hours are going.</p></div>
     </div>
     <div class="info-card">
       <div class="num">02</div>
-      <div>
-        <h3>Get a quote.</h3>
-        <p>The buyer values your data based on what you have.</p>
-      </div>
+      <div><h3>Custom scope</h3><p>We come back with a short plan: what to automate first, the time it should save, and what that means for revenue and capacity.</p></div>
     </div>
     <div class="info-card">
       <div class="num">03</div>
-      <div>
-        <h3>You approve the scope.</h3>
-        <p>Nothing is shared without your sign-off, and everything is de-identified.</p>
-      </div>
-    </div>
-    <div class="info-card">
-      <div class="num">04</div>
-      <div>
-        <h3>Get paid.</h3>
-        <p>Your company signs directly with the buyer.</p>
-      </div>
+      <div><h3>Build and run</h3><p>We build around your existing tools, test with your team, then run and maintain it. You get the results without a project to manage.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ================= WHY WORK WITH US ================= -->
-<section class="grid-section is-dark on-dark" id="why">
-  <div class="glow" style="width:520px;height:520px;left:30%;bottom:-260px;background:rgba(233,119,44,.25)"></div>
-  <span class="eyebrow">Our promise</span>
-  <h2 class="section-heading" data-parallax="0.09">Why work with us</h2>
-  <div class="card-grid cols-3">
-    <div class="info-card">
-      <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6.5C17 4.8 14.8 4 12 4S7 5 7 7c0 4.5 10 2.5 10 7 0 2-2.2 3-5 3s-5-.8-5-2.5"/></svg></div>
-      <div>
-        <h3>Free for companies.</h3>
-        <p>We're paid by the buyer, not you.</p>
-      </div>
+<!-- ================= SPEED ================= -->
+<section class="quote-section on-dark" id="quote">
+  <div class="glow" style="width:760px;height:460px;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(233,119,44,.32)"></div>
+  <div class="ring" style="width:520px;height:520px"></div><div class="ring" style="width:820px;height:820px"></div><div class="ring" style="width:1120px;height:1120px"></div>
+  <span class="eyebrow">How long does it take?</span>
+  <div class="quote-number">2 to 4 weeks.</div>
+  <p class="quote-copy">Most first workflows are live in 2 to 4 weeks, depending on complexity.</p>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="grid-section is-light" id="why">
+  <div class="glow" style="width:480px;height:480px;left:-140px;top:-160px;background:rgba(233,119,44,.22)"></div>
+  <span class="eyebrow">Why us</span>
+  <h2 class="section-heading" data-parallax="0.09">Built for your business, not everyone's.</h2>
+  <div class="card-grid cols-5">
+    <div class="info-card tall-sm">
+      <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div><h3>Done for you.</h3><p>Your team doesn't learn a new platform. We handle the build and the upkeep.</p></div>
     </div>
-    <div class="info-card">
+    <div class="info-card tall-sm">
+      <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M7 8h10v4a5 5 0 01-10 0zM12 17v5"/></svg></div>
+      <div><h3>Works with what you have.</h3><p>No rip and replace. We plug into the tools you already pay for.</p></div>
+    </div>
+    <div class="info-card tall-sm">
+      <div class="icon-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+      <div><h3>Outcomes first.</h3><p>We measure success in revenue, speed and capacity, not features shipped.</p></div>
+    </div>
+    <div class="info-card tall-sm">
       <div class="icon-badge"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div>
-      <div>
-        <h3>We never touch your data.</h3>
-        <p>It goes directly between your company and the buyer.</p>
-      </div>
+      <div><h3>Fixed scope.</h3><p>You know what's being built and what it costs before we start.</p></div>
     </div>
-    <div class="info-card">
-      <div class="icon-badge"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 01-11.6 7.1L3 21l1.9-6.4A8 8 0 1121 12z"/><path d="M8.5 12.5l2.3 2.3 4.7-5"/></svg></div>
-      <div>
-        <h3>Honest answers.</h3>
-        <p>If your data doesn't qualify, we'll tell you in one reply.</p>
-      </div>
+    <div class="info-card tall-sm">
+      <div class="icon-badge"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0113 0M16 4.5a3.5 3.5 0 010 7M18 14.5a6.5 6.5 0 013.5 5.5"/></svg></div>
+      <div><h3>Small, senior team.</h3><p>You work directly with the people building your systems.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="grid-section is-dark on-dark" id="faq">
+  <div class="glow" style="width:520px;height:520px;right:-160px;top:-120px;background:rgba(233,119,44,.22)"></div>
+  <span class="eyebrow">FAQ</span>
+  <h2 class="section-heading" data-parallax="0.09">Questions, answered.</h2>
+  <div class="faq-list">
+    <details class="faq-item" open><summary>Do we need to change our software?</summary><p>No. We build on top of the tools you already use.</p></details>
+    <details class="faq-item"><summary>Who runs it once it's built?</summary><p>We do. We monitor it, fix anything that breaks and keep improving it.</p></details>
+    <details class="faq-item"><summary>How long does it take?</summary><p>Most first workflows are live in 2 to 4 weeks, depending on complexity.</p></details>
+    <details class="faq-item"><summary>Is our data safe?</summary><p>Your data stays in your systems. We only access what a workflow needs, and nothing is used for anything else.</p></details>
+    <details class="faq-item"><summary>What does it cost?</summary><p>Every build is scoped to your business. You get a fixed price after the workflow call, before any work starts.</p></details>
+    <details class="faq-item"><summary>What if it isn't a fit?</summary><p>The call is free, and the scope shows exactly what you'd get before you commit.</p></details>
   </div>
 </section>
 
 <!-- ================= CONTACT ================= -->
 <section class="cta-section" id="contact">
   <div class="cta-panel">
-    <h2 data-parallax="0.1">Get in touch</h2>
-    <p class="cta-lead">Curious what your company's data could be worth? Book a quick call and we'll tell you honestly, in one conversation, whether it qualifies.</p>
-    <a href="https://calendly.com/raj-spravoo/30min" target="_blank" rel="noopener" class="btn btn-white">Book a call</a>
+    <h2 data-parallax="0.1">Find out where your team's hours are going.</h2>
+    <p class="cta-lead">In 30 minutes, we'll map your workflows and show you what's worth automating first.</p>
+    <a href="https://calendly.com/raj-spravoo/30min" target="_blank" rel="noopener" class="btn btn-white">Book your workflow call</a>
   </div>
 </section>
 
@@ -777,14 +848,14 @@
     <img class="footer-logo" data-parallax="0.05" src="media/footer-logo.png" alt="Spravoo">
     <div class="footer-col">
       <h4>Discover</h4>
-      <a href="#operating">Operating companies</a>
-      <a href="#shutdown">Shut-down companies</a>
       <a href="#how">How it works</a>
-      <a href="#contact">Contact</a>
+      <a href="#automate">What we automate</a>
+      <a href="#why">Why us</a>
+      <a href="#faq">FAQ</a>
     </div>
   </div>
   <div class="footer-divider">
-    <span>&copy; 2026 Spravoo</span>
+    <span>&copy; 2026 Spravoo &nbsp;|&nbsp; Custom AI, built and run for you</span>
     <a href="mailto:raj@spravoo.com">raj@spravoo.com</a>
   </div>
 </footer>
